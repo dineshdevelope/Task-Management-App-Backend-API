@@ -2,11 +2,14 @@ import express from "express";
 import userRoute from "./routes/task.route.js";
 import connectDb from "./lib/db.js";
 import dotenv from "dotenv";
+import cors from "cors";
 dotenv.config();
 
 const app = express();
 
 const PORT = 6969;
+
+app.use(cors());
 
 //Data Middle-ware
 app.use(express.json());
