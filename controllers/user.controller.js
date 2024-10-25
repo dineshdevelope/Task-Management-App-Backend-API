@@ -2,7 +2,8 @@ import User from "../models/user.model.js";
 
 export const UserIndex = async (req, res) => {
   try {
-    const user = await User.find();
+    const finduser = await User.find();
+    const user = finduser.reverse();
     res.json(user);
   } catch (error) {
     res.status(500).json({ message: error.message });
